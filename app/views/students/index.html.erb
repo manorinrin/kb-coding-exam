@@ -1,0 +1,18 @@
+GeekKobebe
+
+<%= link_to "新規投稿ページへ",  :controller => "students", :action => "new" %>
+
+<h1>GeekTwitter</h1>
+<h3>Tweet一覧</h3>
+<%= link_to "新規投稿へ", "students", :action => "new" %>
+<div class="students-container">
+  <% @students.each do |t| %>
+  <div class="student">
+    <%= t.body %>
+    <%= t.created_at %>
+     #追記始め
+    <%= link_to "詳細へ", student_path(t.id) %>
+　　 #追記終わり
+  </div>
+  <% end %>
+</div>
